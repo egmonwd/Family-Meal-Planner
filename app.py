@@ -36,7 +36,7 @@ with tabs[0]:
     state["profiles"]["default"]=prof; save_state(state)
 
     st.markdown("### Auto‑generate weekly dinner plan (Spoonacular)")
-    st.caption("Requires Spoonacular API key in Streamlit Secrets as `SPOONACULAR_API_KEY`.")
+    st.caption("Add key in Settings → Secrets: SPOONACULAR_API_KEY = \"your-key\"")
     diet = st.selectbox("Diet (optional)", ["","ketogenic","vegetarian","vegan","paleo","gluten free"], index=0)
     intolerances = st.text_input("Intolerances (optional, comma-separated)", placeholder="gluten, dairy, peanut")
     meals_per_week = st.slider("How many dinners this week?", 3, 7, 5)
@@ -46,7 +46,7 @@ with tabs[0]:
             from utils.recipes_api import search_recipes
             from utils.macro import per_dinner_targets, score_recipe_to_targets
             res = search_recipes(
-                number=meals_per_week*3,  # over-fetch then filter by macros
+                number=meals_per_week*3,
                 max_ingredients=prof.get("ingredient_limit",7),
                 max_ready_time=prof.get("max_prep_minutes",30),
                 diet=diet or None,
@@ -54,21 +54,13 @@ with tabs[0]:
             )
             if not res: st.warning("No recipes returned. Try loosening filters.")
             else:
-                # Compute macro targets
                 targets = per_dinner_targets(prof, dinner_fraction)
-                # Score and pick best matches
                 scored = []
                 for r in res:
                     title = r.get("title","Untitled")
                     servings = r.get("servings",4)
-                    # Ingredients (if present in nutrition object)
-                    ing_list = []
-                    for ing in r.get("nutrition",{}).get("ingredients",[]):
-                        name = ing.get("name","").strip()
-                        amt = ing.get("amount",0); unit = ing.get("unit","")
-                        if name: ing_list.append(f"{name} {amt} {unit}".strip())
+                    ing_list=[]  # Spoonacular includes nutrition; ingredients may require a detail call. Placeholder list.
                     ingredients = "; ".join(ing_list) if ing_list else "See source"
-                    # Nutrition
                     cal=p=c=f_=0.0
                     for n in r.get("nutrition",{}).get("nutrients",[]):
                         nm=n.get("name","").lower()
@@ -76,7 +68,7 @@ with tabs[0]:
                         elif nm=="protein": p=n.get("amount",0.0)
                         elif nm=="carbohydrates": c=n.get("amount",0.0)
                         elif nm=="fat": f_=n.get("amount",0.0)
-                    tmp = {"title":title,"servings":servings,"est_cal":cal,"est_protein":p,"est_carbs":c,"est_fat":f_}
+                    tmp={"title":title,"servings":servings,"est_cal":cal,"est_protein":p,"est_carbs":c,"est_fat":f_}
                     score = score_recipe_to_targets(tmp, targets)
                     scored.append((score,title,servings,ingredients,"See Spoonacular source",cal,p,c,f_))
                 scored.sort(key=lambda x:x[0])
@@ -114,7 +106,6 @@ with tabs[3]:
     selected = st.multiselect("Choose recipes for this week", recipes_df["title"].tolist())
     if selected:
         sel = recipes_df[recipes_df["title"].isin(selected)]
-        # Simple parse to items list
         items=[]
         for _,r in sel.iterrows():
             parts=[x.strip() for x in str(r["ingredients"]).replace("\\n",";").split(";") if x.strip()]
