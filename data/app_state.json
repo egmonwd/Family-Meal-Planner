@@ -16,13 +16,12 @@
       "kids_present": {
         "Mon": false,
         "Tue": false,
-        "Wed": false,
-        "Thu": false,
-        "Fri": false,
-        "Sat": false,
-        "Sun": false
+        "Wed": true,
+        "Thu": true,
+        "Fri": true,
+        "Sat": true,
+        "Sun": true
       }
     }
-  },
-  "recipes": []
+  }
 }
