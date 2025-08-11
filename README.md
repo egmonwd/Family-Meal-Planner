@@ -1,11 +1,10 @@
-# Family Meal Planner — Milestone B (Streamlit)
+# Family Meal Planner — Milestone C (Streamlit)
 
-Adds on top of Milestone A:
-- Batch‑Prep Guide (weekend + midweek) with combined tasks and time estimates
-- Improved ingredient parsing from Spoonacular `extendedIngredients`
-- Budget/store tweaks: preferred store per category + swap prompts
-- Quota guard + Library‑only fallback + Search breadth controls (Narrow/Balanced/Wide)
-- H‑E‑B prefill list + MyFitnessPal CSV export
+Adds on top of Milestone B:
+- **Favorites‑first planner**: picks 5★ favorites before using API/library pool
+- **Pantry screen**: track on‑hand items (add/edit/import/export) and auto‑subtract from shopping list
+- **Recipe uploads**: add by link, paste text, or upload file (image/PDF/text) with metadata
+- Keeps: quota guard, Library‑only mode, batch‑prep guide, store preferences, multi‑profiles
 
-Secrets:
+Secrets: set in Streamlit Cloud → Settings → Secrets
 SPOONACULAR_API_KEY = "your-key"
