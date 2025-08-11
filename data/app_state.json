@@ -1,26 +1,93 @@
 {
   "profiles": {
-    "default": {
+    "you": {
       "calories": 2200,
       "protein_g": 170,
       "carbs_g": 180,
-      "fat_g": 70,
-      "ingredient_limit": 7,
-      "max_prep_minutes": 30,
-      "batch_pref": "Medium",
-      "store_plan": {
-        "HEB": true,
-        "Costco": false,
-        "Aldi": false
+      "fat_g": 70
+    },
+    "spouse": {
+      "calories": 1900,
+      "protein_g": 130,
+      "carbs_g": 200,
+      "fat_g": 60
+    },
+    "kidA": {
+      "calories": 1400,
+      "protein_g": 75,
+      "carbs_g": 160,
+      "fat_g": 45
+    },
+    "kidB": {
+      "calories": 1400,
+      "protein_g": 75,
+      "carbs_g": 160,
+      "fat_g": 45
+    }
+  },
+  "settings": {
+    "ingredient_limit": 7,
+    "max_prep_minutes": 30,
+    "batch_pref": "Medium",
+    "store_plan": {
+      "HEB": true,
+      "Costco": false,
+      "Aldi": false
+    },
+    "macro_split": {
+      "Breakfast": 0.25,
+      "Lunch": 0.35,
+      "Snack": 0.1,
+      "Dinner": 0.3
+    },
+    "meals_per_day": {
+      "Breakfast": 1,
+      "Lunch": 1,
+      "Snack": 1,
+      "Dinner": 1
+    },
+    "headcount": {
+      "Mon": {
+        "you": true,
+        "spouse": true,
+        "kidA": false,
+        "kidB": false
       },
-      "kids_present": {
-        "Mon": false,
-        "Tue": false,
-        "Wed": true,
-        "Thu": true,
-        "Fri": true,
-        "Sat": true,
-        "Sun": true
+      "Tue": {
+        "you": true,
+        "spouse": true,
+        "kidA": false,
+        "kidB": false
+      },
+      "Wed": {
+        "you": true,
+        "spouse": true,
+        "kidA": true,
+        "kidB": true
+      },
+      "Thu": {
+        "you": true,
+        "spouse": true,
+        "kidA": true,
+        "kidB": true
+      },
+      "Fri": {
+        "you": true,
+        "spouse": true,
+        "kidA": true,
+        "kidB": true
+      },
+      "Sat": {
+        "you": true,
+        "spouse": true,
+        "kidA": true,
+        "kidB": true
+      },
+      "Sun": {
+        "you": true,
+        "spouse": true,
+        "kidA": true,
+        "kidB": true
       }
     }
   }
