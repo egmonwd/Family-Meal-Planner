@@ -1,6 +1,6 @@
 from recipe_scrapers import scrape_me
 def import_from_url(url: str) -> dict:
-    sc = scrape_me(url, wild_mode=True)
+    sc = scrape_me(url)  # removed wild_mode for compatibility
     title = sc.title() or "Imported Recipe"
     try: servings=int((sc.yields() or '4').split()[0])
     except Exception: servings=4
