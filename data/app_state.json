@@ -29,11 +29,6 @@
     "ingredient_limit": 7,
     "max_prep_minutes": 30,
     "batch_pref": "Medium",
-    "store_plan": {
-      "HEB": true,
-      "Costco": false,
-      "Aldi": false
-    },
     "macro_split": {
       "Breakfast": 0.25,
       "Lunch": 0.35,
@@ -62,38 +57,45 @@
       "Wed": {
         "you": true,
         "spouse": true,
-        "kidA": false,
-        "kidB": false
+        "kidA": true,
+        "kidB": true
       },
       "Thu": {
         "you": true,
         "spouse": true,
-        "kidA": false,
-        "kidB": false
+        "kidA": true,
+        "kidB": true
       },
       "Fri": {
         "you": true,
         "spouse": true,
-        "kidA": false,
-        "kidB": false
+        "kidA": true,
+        "kidB": true
       },
       "Sat": {
         "you": true,
         "spouse": true,
-        "kidA": false,
-        "kidB": false
+        "kidA": true,
+        "kidB": true
       },
       "Sun": {
         "you": true,
         "spouse": true,
-        "kidA": false,
-        "kidB": false
+        "kidA": true,
+        "kidB": true
       }
     },
     "store_preferences": {
       "produce": "Aldi",
       "meat": "HEB",
       "pantry": "Costco"
+    },
+    "store_cadence": {
+      "costco_every_n_weeks": 4,
+      "skip_this_week": {
+        "Costco": false,
+        "Aldi": false
+      }
     }
   },
   "pantry": []

@@ -1,9 +1,9 @@
 import math
-def per_meal_targets(profile: dict, fraction: float):
-    return {'cal': profile.get('calories', 2000)*fraction,
-            'p': profile.get('protein_g', 150)*fraction,
-            'c': profile.get('carbs_g', 200)*fraction,
-            'f': profile.get('fat_g', 70)*fraction}
+def per_meal_targets(profile, fraction):
+    return {'cal': profile.get('calories',2000)*fraction,
+            'p': profile.get('protein_g',150)*fraction,
+            'c': profile.get('carbs_g',200)*fraction,
+            'f': profile.get('fat_g',70)*fraction}
 def score_recipe_to_targets(row, targets):
     serv=max(int(row.get('servings',1)),1)
     cal=float(row.get('est_cal',0))/serv

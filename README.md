@@ -1,15 +1,15 @@
-# Family Meal Planner — Milestone D (Streamlit)
+# Family Meal Planner — Milestone E+ (Merged)
+This build merges **all** features from earlier milestones (A–D) plus E enhancements:
+- Multi‑profiles, daily headcount, full‑week generator (Breakfast/Lunch/Snack/Dinner)
+- Favorites‑first planner, macro splits, quota guard, Library‑only fallback
+- Wider search (themes + pagination) via Spoonacular; ingredient parsing
+- Recipe Library: add by link (auto‑scrape), paste text, or upload file (PDF/Image/TXT)
+- Auto nutrition fill via Spoonacular when macros are missing
+- Pantry (quantity‑aware), H‑E‑B prefill, MyFitnessPal CSV
+- Batch‑Prep Guide
+- Store preferences by category; store cadence flags; simple price map & cost estimate
 
-Adds on top of Milestone C:
-- **URL Importer** using `recipe-scrapers` for hundreds of popular recipe sites.
-- **OCR pipeline**:
-  - PDFs: parsed with `pdfplumber` (no external API needed).
-  - Images (jpg/png): optional **OCR.space** API (set `OCR_SPACE_API_KEY` in Secrets) for cloud OCR.
-- Respects existing features: favorites-first, pantry-aware shopping, batch-prep, quota guard.
-
-## Secrets
-- `SPOONACULAR_API_KEY` — for auto-generation and optional nutrition analysis.
-- `OCR_SPACE_API_KEY` — optional, for image OCR (PDFs do not require this).
-
-## Notes
-- Nutrition fields from URL imports depend on the source site. If missing, you can keep your Spoonacular key for generation or add a nutrition API later.
+## Secrets (Streamlit → ⋯ → Settings → Secrets)
+SPOONACULAR_API_KEY = "your-key"
+# Optional, for image OCR (PDFs do not need this):
+OCR_SPACE_API_KEY = "your-ocrspace-key"
