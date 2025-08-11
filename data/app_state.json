@@ -89,6 +89,11 @@
         "kidA": true,
         "kidB": true
       }
+    },
+    "store_preferences": {
+      "produce": "Aldi",
+      "meat": "HEB",
+      "pantry": "Costco"
     }
   }
 }

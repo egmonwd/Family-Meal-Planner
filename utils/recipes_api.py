@@ -19,6 +19,8 @@ def _request(url, params):
     p = dict(params or {})
     p["apiKey"] = key
     r = requests.get(url, params=p, timeout=30)
+    if r.status_code == 402:
+        raise RuntimeError("Spoonacular quota reached (HTTP 402). Reduce requests or upgrade plan.")
     r.raise_for_status()
     return r.json()
 

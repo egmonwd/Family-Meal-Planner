@@ -1,12 +1,11 @@
-# Family Meal Planner — Milestone A (Streamlit)
+# Family Meal Planner — Milestone B (Streamlit)
 
-This build adds:
-- Multi-profile (you, spouse, kids) with per-person calories & macros
-- Daily headcount controls (who's home) → auto-scale servings
-- Full-week generator for **Breakfast / Lunch / Snack / Dinner**
-- Macro split per meal type (e.g., 25/35/10/30) with macro-balanced picks
-- Wider recipe search (themes + pagination) for more variety
-- MyFitnessPal CSV export; H‑E‑B prefill list
-- Spoonacular key via Streamlit **Secrets**: `SPOONACULAR_API_KEY`
+Adds on top of Milestone A:
+- Batch‑Prep Guide (weekend + midweek) with combined tasks and time estimates
+- Improved ingredient parsing from Spoonacular `extendedIngredients`
+- Budget/store tweaks: preferred store per category + swap prompts
+- Quota guard + Library‑only fallback + Search breadth controls (Narrow/Balanced/Wide)
+- H‑E‑B prefill list + MyFitnessPal CSV export
 
-Deploy on Streamlit Cloud; see README from earlier zip for details.
+Secrets:
+SPOONACULAR_API_KEY = "your-key"
