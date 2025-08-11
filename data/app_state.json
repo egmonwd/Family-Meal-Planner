@@ -1,0 +1,28 @@
+{
+  "profiles": {
+    "default": {
+      "calories": 2200,
+      "protein_g": 170,
+      "carbs_g": 180,
+      "fat_g": 70,
+      "ingredient_limit": 7,
+      "max_prep_minutes": 30,
+      "batch_pref": "Medium",
+      "store_plan": {
+        "HEB": true,
+        "Costco": false,
+        "Aldi": false
+      },
+      "kids_present": {
+        "Mon": false,
+        "Tue": false,
+        "Wed": false,
+        "Thu": false,
+        "Fri": false,
+        "Sat": false,
+        "Sun": false
+      }
+    }
+  },
+  "recipes": []
+}
