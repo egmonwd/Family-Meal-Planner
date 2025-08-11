@@ -62,32 +62,32 @@
       "Wed": {
         "you": true,
         "spouse": true,
-        "kidA": true,
-        "kidB": true
+        "kidA": false,
+        "kidB": false
       },
       "Thu": {
         "you": true,
         "spouse": true,
-        "kidA": true,
-        "kidB": true
+        "kidA": false,
+        "kidB": false
       },
       "Fri": {
         "you": true,
         "spouse": true,
-        "kidA": true,
-        "kidB": true
+        "kidA": false,
+        "kidB": false
       },
       "Sat": {
         "you": true,
         "spouse": true,
-        "kidA": true,
-        "kidB": true
+        "kidA": false,
+        "kidB": false
       },
       "Sun": {
         "you": true,
         "spouse": true,
-        "kidA": true,
-        "kidB": true
+        "kidA": false,
+        "kidB": false
       }
     },
     "store_preferences": {

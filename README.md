@@ -1,10 +1,15 @@
-# Family Meal Planner — Milestone C (Streamlit)
+# Family Meal Planner — Milestone D (Streamlit)
 
-Adds on top of Milestone B:
-- **Favorites‑first planner**: picks 5★ favorites before using API/library pool
-- **Pantry screen**: track on‑hand items (add/edit/import/export) and auto‑subtract from shopping list
-- **Recipe uploads**: add by link, paste text, or upload file (image/PDF/text) with metadata
-- Keeps: quota guard, Library‑only mode, batch‑prep guide, store preferences, multi‑profiles
+Adds on top of Milestone C:
+- **URL Importer** using `recipe-scrapers` for hundreds of popular recipe sites.
+- **OCR pipeline**:
+  - PDFs: parsed with `pdfplumber` (no external API needed).
+  - Images (jpg/png): optional **OCR.space** API (set `OCR_SPACE_API_KEY` in Secrets) for cloud OCR.
+- Respects existing features: favorites-first, pantry-aware shopping, batch-prep, quota guard.
 
-Secrets: set in Streamlit Cloud → Settings → Secrets
-SPOONACULAR_API_KEY = "your-key"
+## Secrets
+- `SPOONACULAR_API_KEY` — for auto-generation and optional nutrition analysis.
+- `OCR_SPACE_API_KEY` — optional, for image OCR (PDFs do not require this).
+
+## Notes
+- Nutrition fields from URL imports depend on the source site. If missing, you can keep your Spoonacular key for generation or add a nutrition API later.
